@@ -12,6 +12,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
+@CrossOrigin
 @RestController
 @RequestMapping("/komitenti")
 public class KomitentController {
@@ -25,6 +28,11 @@ public class KomitentController {
     @GetMapping
     public Iterable<Komitent> vrniOsebe(){
         return komitentDao.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Komitent> vrniKomitentaPoId(@PathVariable(name = "id")Long id){
+        return komitentDao.findById(id);
     }
 
     @Operation(summary = "Dodajanje novega komitenta.")

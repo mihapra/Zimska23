@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+
+  spring_db:
+    image: mysql:8.0.26
+    restart: always
+    environment:
+      - MYSQL_DATABASE=WinterSchool23
+      - MYSQL_ROOT_PASSWORD=root1234
+    volumes:
+      - mysql_db:/var/lib/mysql
+
+  mikrostoritev:
+    build: .
+    restart: always
+    ports:
+      - 8180:8280
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://spring_db:3306/WinterSchool23
+      - SPRING_DATASOURCE_PASSWORD=root1234
+    depends_on:
+      - spring_db
+
+volumes:
+  mysql_db:

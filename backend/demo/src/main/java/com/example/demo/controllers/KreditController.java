@@ -5,6 +5,9 @@ import com.example.demo.vao.Kredit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
+@CrossOrigin
 @RestController
 @RequestMapping("/krediti")
 public class KreditController {
@@ -15,6 +18,11 @@ public class KreditController {
     @GetMapping
     public Iterable<Kredit> vrniKredite(){
         return kreditDao.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Kredit> vrniKreditPoId(@PathVariable(name = "id")Long id){
+        return kreditDao.findById(id);
     }
 
     @PostMapping("/add")
