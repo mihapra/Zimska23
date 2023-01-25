@@ -20,7 +20,7 @@ jobs:
         node-version: 16
         cache: 'npm'
         cache-dependency-path: /home/runner/work/Zimska23/Zimska23/frontend/vodenje_kreditov/package-lock.json
-    - run: npm i
+    - run: npm ci
       working-directory: frontend/vodenje_kreditov
     - run: npm run build --if-present
       working-directory: frontend/vodenje_kreditov
