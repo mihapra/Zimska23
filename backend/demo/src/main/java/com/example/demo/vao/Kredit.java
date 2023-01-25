@@ -25,6 +25,17 @@ public class Kredit {
     @JsonIgnore
     Komitent komitent;
 
+    public Kredit(int velikostKredita, int steviloMesecev, int mesecniObrok, Komitent komitent) {
+        this.velikostKredita = velikostKredita;
+        this.steviloMesecev = steviloMesecev;
+        this.mesecniObrok = mesecniObrok;
+        this.komitent = komitent;
+    }
+
+    public Kredit() {
+
+    }
+
     public Long getId() {
         return id;
     }

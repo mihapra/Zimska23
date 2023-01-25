@@ -23,6 +23,16 @@ public class Komitent {
     @OneToMany(mappedBy = "komitent", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     Collection<Kredit> krediti;
 
+    public Komitent(String firstName, String lastName, Collection<Kredit> krediti) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.krediti = krediti;
+    }
+
+    public Komitent() {
+
+    }
+
     public Long getId() {
         return id;
     }

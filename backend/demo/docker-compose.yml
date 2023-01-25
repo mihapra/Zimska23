@@ -15,7 +15,7 @@ services:
     build: .
     restart: always
     ports:
-      - 8180:8280
+      - 8180:8180
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://spring_db:3306/WinterSchool23
       - SPRING_DATASOURCE_PASSWORD=root1234
