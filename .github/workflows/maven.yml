@@ -30,7 +30,7 @@ jobs:
       working-directory: backend/demo
 #     - name: Run tests
 #       run: mvn -B test
-#       working-directory: backend/demo
+#       working-directory: backend/demo 
     - name: Build and analyze
       env:
         SONAR_TOKEN: f75a9caf00f178e75908025205ff7ed98d16d585
